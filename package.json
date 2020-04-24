@@ -1,0 +1,16 @@
+{
+  "name": "ganjoor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node migration.js",
+    "export:db": "mongodump --db ganjoor --out ./db/mongo",
+    "import:db": "gunzip < ./db/mongo.zip | mongorestore  ./db/mongo",
+    "import:sql": "gunzip < ./db/dump.sql.gz | mysql -u root -p ./db/dump"
+  },
+  "dependencies": {
+    "mongodb": "^3.5.5",
+    "mysql": "^2.18.1"
+  }
+}
