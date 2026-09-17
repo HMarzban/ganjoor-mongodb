@@ -1,9 +1,15 @@
+## Dataset migration utility
+
+This is a migration of a bundled Ganjoor dataset, not a continuously synchronized database. Record the source dump date and compare document counts before relying on a new migration. The bundled data has not been refreshed by this documentation update.
+
 # [Ganjoor](https://ganjoor.net/) migration mysql db to mongodb
 
 > Note: before hit `yarn start` be sure to import `./db/dump.sql.gz` to your local database
 
+**Before running:** `migration.js` connects to the local MongoDB database `ganjoor` and drops that entire database before importing. Run only against a disposable local instance, or edit the connection and migration behavior first. Preserve any existing data separately.
+
 ```sh
-$ yarn i            # install dependency
+$ yarn install      # install dependencies
 
 $ yarn start        # start the migration process
 $ yarn export:db    # export ganjoor mongodb dataset
